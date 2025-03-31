@@ -9,6 +9,8 @@
                     <div class="card-body">
                         <h2 class="card-title">{{ $room->name }}</h2>
                         <p class="card-text">{{ $room->description }}</p>
+                        <p>Price: ${{ number_format($room->price, 2) }}</p>
+
 
                         <h3 class="mt-4">Select Date and Time</h3>
                         @if (session('success'))

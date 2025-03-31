@@ -15,5 +15,6 @@ class Room extends Model
         'name',
         'description',
         'image',
+        'price',
     ];
 }

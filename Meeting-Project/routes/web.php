@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Room;
 use App\Http\Controllers\BookingController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\PaymentController;
 
 Auth::routes();
 
@@ -46,4 +47,7 @@ Route::get('/admin/bookings', [BookingController::class, 'adminBookings'])->name
 
 Route::get('/admin/bookings/approve/{id}', [BookingController::class, 'approveBooking'])->name('admin.bookings.approve');
 Route::get('/admin/bookings/cancel/{id}', [BookingController::class, 'cancelBooking'])->name('admin.bookings.cancel');
+
+Route::get('/payment/{booking_id}', [PaymentController::class, 'showPaymentForm'])->name('payment.form');
+Route::post('/payment/process', [PaymentController::class, 'processPayment'])->name('payment.process');
 
